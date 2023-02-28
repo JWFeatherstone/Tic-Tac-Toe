@@ -67,11 +67,15 @@ h1 {
     margin-top: 20%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background-image: url("assets/Grid Background.png");
+    background-image: url("assets/grid-background.png");
     background-size: cover;
 }
 
 .game-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 10rem;
     aspect-ratio: 1/1;
+
 }
