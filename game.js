@@ -12,11 +12,13 @@ class Game {
             this.board[index] = 1;
             this.whosTurn = 2;
             console.log(this.board)
+            updateOutput();
             this.checkForWin();
         } else {
             this.board[index] = 4;
             this.whosTurn = 1;
             console.log(this.board)
+            updateOutput();
             this.checkForWin();
         }
     }
@@ -24,21 +26,18 @@ class Game {
     checkforDraw() {
         if (!this.board.includes(0)){
             this.announceWinner();
-            setTimeout(this.resetGame(), 3000);
+            setTimeout(this.resetGame(), 1000);
         }
     }
 
     announceWinner() {
-        return 'Bloop'
+        console.log('Boop')
     }
 
-
-    resetGame() {
+    resetGame(array) {
         this.winner = null;
-        this.board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         this.whosTurn = 1;
-        console.log(this.board)
-        console.log('Reset Game')
+        clearBoard();
     }
 
     checkForWin() {
@@ -59,12 +58,12 @@ class Game {
                 this.playerOne.increaseWins();
                 this.winner = 'Player One'
                 this.announceWinner()
-                setTimeout(this.resetGame(), 3000);
+                setTimeout(this.resetGame(), 2000);
             } else if (sum === 12){
                 this.playerTwo.increaseWins();
                 this.winner = 'Player Two'
                 this.announceWinner()
-                setTimeout(this.resetGame(), 3000);
+                setTimeout(this.resetGame(), 2000);
             } else {
                 this.checkforDraw();
             }
