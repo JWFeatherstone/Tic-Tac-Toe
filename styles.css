@@ -8,7 +8,24 @@ body, html {
     font-family: "europa", sans-serif;
 }
 
+.hidden {
+    display: none;
+}
 
+.alert-box {
+    position: fixed;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 0.2rem solid black;
+    font-size: large;
+    font-weight: 700;
+    padding: 1rem;
+    text-align: center;
+    width: 40%;
+
+}
 
 /* Side Bars */
 .side-bars{
@@ -77,5 +94,11 @@ h1 {
     align-items: center;
     width: 10rem;
     aspect-ratio: 1/1;
+    justify-items: center;
+}
 
+img {
+    height: 50%;
+    width: 50%;
+    object-fit: contain;
 }
