@@ -1,121 +1,119 @@
 /* Global Settings */
 
 body, html {
-    margin: 0;
-    padding: 0;
-    background-color: #FFFAF4;
-    height: 100%;
-    font-family: "europa", sans-serif;
+  background-color: #FFFAF4;
+  font-family: "europa", sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .alert-box {
-    position: fixed;
-    top: 23%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border: 0.2rem solid black;
-    font-size: large;
-    font-weight: 700;
-    padding: 1rem;
-    text-align: center;
-    width: 40%;
-
-}
-
-/* Side Bars */
-.side-bars{
-    background-color: #F7E9E0;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    width: 25%;
-    height: 100%;
-}
-
-#leftSideBar {
-    left: 0;
-    top: 0;
-}
-
-#rightSideBar {
-    right: 0;
-    top: 0;
-}
-
-.player-headers {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    height: 5rem;
-    margin-top: 5rem;
+  background-color: white;
+  border: 0.2rem solid black;
+  font-size: large;
+  font-weight: 700;
+  left: 50%;
+  padding: 1rem;
+  position: fixed;
+  text-align: center;
+  top: 23%;
+  transform: translate(-50%, -50%);
+  width: 40%;
 }
 
 .player-icons {
     height: 50%;
-    image-resolution: 300dpi;
     scale: 1.2;
+    object-fit: contain;
+  }
+
+/* Side Bars */
+.side-bars {
+  background-color: #F7E9E0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: fixed;
+  width: 25%;
 }
 
+.left-side-bar {
+  left: 0;
+  top: 0;
+}
+
+.right-side-bar {
+  right: 0;
+  top: 0;
+}
+
+.player-headers {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 5rem;
+  justify-content: center;
+  margin-top: 5rem;
+  padding: 0 1rem;
+}
 
 /* Game Container and Board */
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 50%;
 }
 
 .announcement-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    text-align: center;
-    width: 60%;
-    margin-top: 5%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  padding: 1rem;
+  text-align: center;
+  width: 60%;
+}
+
+.announcement-box img {
+  height: 12%;
+  width: 12%;
+  object-fit: contain;
 }
 
 .turn-icon {
-    height: 4rem;
-    width: 2.5rem;
-    margin-right: 1rem;
-    aspect-ratio: 1/1;
+  aspect-ratio: 1/1;
+  height: 4rem;
+  margin-right: 1rem;
+  width: 2.5rem;
 }
 
 h1 {
-    font-weight: 700;
-    margin-top: 4%;
+  font-weight: 700;
+  margin-top: 4%;
 }
 
 .game-board {
-    margin-top: 20%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background-image: url("assets/grid-background.png");
-    background-size: cover;
+  background-image: url("assets/grid-background.png");
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20%;
 }
 
 .game-tile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10rem;
-    aspect-ratio: 1/1;
-    justify-items: center;
-}
-
-img {
-    height: 50%;
-    width: 50%;
-    object-fit: contain;
+  align-items: center;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  width: 10rem;
 }

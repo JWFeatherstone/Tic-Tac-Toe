@@ -26,8 +26,8 @@ gameBoard.addEventListener("click", function(event) {
 // Functions
 function updateOutput() {
   updateAnnouncement(game.whosTurn);
-  var playerOneIcon = `<img src="${game.playerOne.token}" alt="Player One Icon" class="game-tile">`;
-  var playerTwoIcon = `<img src="${game.playerTwo.token}" alt="Player Two Icon" class="game-tile">`;
+  var playerOneIcon = `<img src="${game.playerOne.token}" alt="Player One Icon" class="game-tile player-icons">`;
+  var playerTwoIcon = `<img src="${game.playerTwo.token}" alt="Player Two Icon" class="game-tile player-icons">`;
   for (i = 0; i < game.board.length; i++) {
     if (game.board[i] === 1) {
       document.getElementById(`tile${i}`).innerHTML = playerOneIcon;
