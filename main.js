@@ -78,9 +78,9 @@ function duplicateTurnAlert() {
 };
 
 function clearBoard() {
-    game.board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    game.winner = null;
-    gameBoard.innerHTML = `
+  game.board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  game.winner = null;
+  gameBoard.innerHTML = `
     <div class="game-tile" id="tile0"></div>
     <div class="game-tile" id="tile1"></div>
     <div class="game-tile" id="tile2"></div>
