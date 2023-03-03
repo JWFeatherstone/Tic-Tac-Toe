@@ -13,6 +13,7 @@ class Game {
       this.whosTurn = 2;
       updateOutput();
       this.checkForWin();
+      this.checkForDraw();
     } 
         
     else {
@@ -20,11 +21,13 @@ class Game {
       this.whosTurn = 1;
       updateOutput();
       this.checkForWin();
+      this.checkForDraw();
     }
   };
 
-  checkforDraw() {
-    if (!this.board.includes(0)) {
+  checkForDraw() {
+    if (!this.board.includes(0) && this.winner === null) {
+      
       this.winner = 'Draw';
       updateAnnouncement(this.winner);
       setTimeout(this.resetGame, 2000);
@@ -53,20 +56,20 @@ class Game {
         return a + b;
       });
 
-      if (sum === 3) {
+      if (sum == 3) {
+        console.log("P1win")
         this.playerOne.increaseWins();
         this.winner = 'Player One'
         updateAnnouncement(this.winner);
         setTimeout(this.resetGame, 2000);
       } 
     
-      else if (sum === 12){
+      else if (sum == 12) {
+        console.log("P2win")
         this.playerTwo.increaseWins();
         this.winner = 'Player Two'
         updateAnnouncement(this.winner);
         setTimeout(this.resetGame, 2000);
-      } else {
-        this.checkforDraw();
       }
     };
   };
