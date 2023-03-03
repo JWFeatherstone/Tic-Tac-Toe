@@ -14,7 +14,7 @@ body, html {
 
 .alert-box {
     position: fixed;
-    top: 18%;
+    top: 23%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
@@ -73,6 +73,23 @@ main {
     align-items: center;
     width: 50%;
     margin: auto;
+}
+
+.announcement-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    width: 60%;
+    margin-top: 5%;
+}
+
+.turn-icon {
+    height: 4rem;
+    width: 2.5rem;
+    margin-right: 1rem;
+    aspect-ratio: 1/1;
 }
 
 h1 {

@@ -25,19 +25,17 @@ class Game {
 
     checkforDraw() {
         if (!this.board.includes(0)){
-            this.announceWinner();
-            setTimeout(this.resetGame(), 1000);
+            this.winner = "Draw";
+            updateAnnouncement(this.winner);
+            setTimeout(this.resetGame, 2000);
         }
     }
 
-    announceWinner() {
-        console.log('Boop')
-    }
-
-    resetGame(array) {
-        this.winner = null;
+    resetGame() {
         this.whosTurn = 1;
         clearBoard();
+        updateWinCount();
+        updateAnnouncement(this.whosTurn);
     }
 
     checkForWin() {
@@ -57,13 +55,13 @@ class Game {
             if (sum === 3) {
                 this.playerOne.increaseWins();
                 this.winner = 'Player One'
-                this.announceWinner()
-                setTimeout(this.resetGame(), 2000);
+                updateAnnouncement(this.winner);
+                setTimeout(this.resetGame, 2000);
             } else if (sum === 12){
                 this.playerTwo.increaseWins();
                 this.winner = 'Player Two'
-                this.announceWinner()
-                setTimeout(this.resetGame(), 2000);
+                updateAnnouncement(this.winner);
+                setTimeout(this.resetGame, 2000);
             } else {
                 this.checkforDraw();
             }

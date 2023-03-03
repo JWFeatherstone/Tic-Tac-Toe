@@ -9,11 +9,13 @@
         <section class="side-bars" id="leftSideBar">
             <header class="player-headers">
                 <img class="player-icons" src="assets/sun-icon.png" alt="player one icon">
-                <h2 class ="win-counts">0 WINS</h2>
+                <h2 class ="win-counts" id="playerOneWins">0 WINS</h2>
             </header>
         </section>
         <main>
-            <h1>It's player one's turn</h1>
+            <header class="announcement-box">
+                `<img class="turn-icon" src="assets/sun-icon.png" alt="Player One Turn Token"><h1>'s Turn</h1>`
+            </header>
             <section class="alert-box hidden">I'm sorry, you can't go there! Please select a tile that does not already have an icon.</section>
             <section class="game-board">
                 <div class="game-tile" id="tile0"></div>
@@ -30,7 +32,7 @@
         <section class="side-bars" id="rightSideBar">
             <header class="player-headers">
                 <img class="player-icons" src="assets/smudge-icon.png" alt="player two icon">
-                <h2 class="win-counts">0 WINS</h2>
+                <h2 class="win-counts" id="playerTwoWins">0 WINS</h2>
             </header>
         </section>
         <script src="game.js"></script>

@@ -13,28 +13,17 @@ var game = new Game(playerOne, playerTwo);
 gameBoard.addEventListener("click", function(event) {
     var index = event.target.id.slice(-1);
     console.log(event.target)
-    if (event.target.classList.contains("game-tile") && game.board[index] === 0) {
+    if (event.target.classList.contains("game-tile") && game.board[index] === 0 && game.winner === null) {
         game.takeTurn(index);
-    } else if (event.target.classList.contains("game-tile") && game.board[index] !== 0) {
+    } else if (event.target.classList.contains("game-tile") && game.board[index] !== 0 && game.winner === null) {
         duplicateTurnAlert();
     }
 });
 
 
-
-
-
 // Functions
-
-function duplicateTurnAlert() {
-    var alertBox = document.querySelector(".alert-box");
-    alertBox.classList.remove("hidden");
-    setTimeout(function() {
-        alertBox.classList.add("hidden");
-    }, 3000);
-}
-
 function updateOutput() {
+    updateAnnouncement(game.whosTurn);
     var playerOneIcon = `<img src="${game.playerOne.token}" alt="Player One Icon" class="game-tile">`;
     var playerTwoIcon = `<img src="${game.playerTwo.token}" alt="Player Two Icon" class="game-tile">`;
     for (i = 0; i < game.board.length; i++) {
@@ -47,8 +36,39 @@ function updateOutput() {
     }
 }
 
+function updateAnnouncement(announcement){
+    var announcementBox = document.querySelector(".announcement-box");
+    if (announcement === 1) {
+        announcementBox.innerHTML = `<img class="turn-icon" src="${game.playerOne.token}" alt="Player One Turn Token"><h1>'s Turn</h1>`
+    } else if (announcement === 2) {
+        announcementBox.innerHTML = `<img class="turn-icon" src="${game.playerTwo.token}" alt="Player Two Turn Token"><h1>'s Turn</h1>`
+    } else if (announcement === "Player One"){
+        announcementBox.innerHTML = `<h1>Player One Wins!</h1>`
+    } else if (announcement === "Player Two"){
+        announcementBox.innerHTML = `<h1>Player Two Wins!</h1>`
+    } else if (announcement === "Draw"){
+        announcementBox.innerHTML = `<h1>Draw!</h1>`
+    }
+}
+
+function updateWinCount() {
+    var playerOneWins = document.querySelector("#playerOneWins");
+    var playerTwoWins = document.querySelector("#playerTwoWins");
+    playerOneWins.innerText = `${game.playerOne.wins} WINS`;
+    playerTwoWins.innerText = `${game.playerTwo.wins} WINS`;
+}
+
+function duplicateTurnAlert() {
+    var alertBox = document.querySelector(".alert-box");
+    alertBox.classList.remove("hidden");
+    setTimeout(function() {
+        alertBox.classList.add("hidden");
+    }, 3000);
+}
+
 function clearBoard() {
     game.board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    game.winner = null;
     gameBoard.innerHTML = `
     <div class="game-tile" id="tile0"></div>
     <div class="game-tile" id="tile1"></div>
