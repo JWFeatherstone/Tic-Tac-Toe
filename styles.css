@@ -21,9 +21,10 @@ body, html {
   padding: 1rem;
   position: fixed;
   text-align: center;
-  top: 23%;
+  top: 22%;
   transform: translate(-50%, -50%);
   width: 40%;
+  margin: auto;
 }
 
 .player-icons {
@@ -106,7 +107,7 @@ h1 {
   background-size: cover;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 .game-tile {

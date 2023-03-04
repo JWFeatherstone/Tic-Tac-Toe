@@ -10,6 +10,11 @@ var game = new Game(playerOne, playerTwo);
 
 // Event Listeners
 
+window.addEventListener("load", function() {
+    updateOutput();
+    updateAnnouncement(game.whosTurn);
+});
+
 gameBoard.addEventListener("click", function(event) {
   var index = event.target.id.slice(-1);
   console.log(event.target)
@@ -24,17 +29,19 @@ gameBoard.addEventListener("click", function(event) {
 
 
 // Functions
+
 function updateOutput() {
-  updateAnnouncement(game.whosTurn);
-  var playerOneIcon = `<img src="${game.playerOne.token}" alt="Player One Icon" class="game-tile player-icons">`;
-  var playerTwoIcon = `<img src="${game.playerTwo.token}" alt="Player Two Icon" class="game-tile player-icons">`;
+  gameBoard.innerHTML = "";
+  console.log(game.board)
   for (i = 0; i < game.board.length; i++) {
     if (game.board[i] === 1) {
-      document.getElementById(`tile${i}`).innerHTML = playerOneIcon;
+      gameBoard.innerHTML += `<div class="game-tile" id="tile${i}"><img src="${game.playerOne.token}" alt="Player One Icon" class="game-tile player-icons"></div>`
     } 
-    
+        
     else if (game.board[i] === 4) {
-      document.getElementById(`tile${i}`).innerHTML = playerTwoIcon;
+      gameBoard.innerHTML += `<div class="game-tile" id="tile${i}"><img src="${game.playerTwo.token}" alt="Player Two Icon" class="game-tile player-icons"></div>`
+    } else {
+      gameBoard.innerHTML += `<div class="game-tile" id="tile${i}"></div>`
     }
   }
 };
@@ -80,15 +87,4 @@ function duplicateTurnAlert() {
 function clearBoard() {
   game.board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   game.winner = null;
-  gameBoard.innerHTML = `
-    <div class="game-tile" id="tile0"></div>
-    <div class="game-tile" id="tile1"></div>
-    <div class="game-tile" id="tile2"></div>
-    <div class="game-tile" id="tile3"></div>
-    <div class="game-tile" id="tile4"></div>
-    <div class="game-tile" id="tile5"></div>
-    <div class="game-tile" id="tile6"></div>
-    <div class="game-tile" id="tile7"></div>
-    <div class="game-tile" id="tile8"></div>
-    `;
 };
