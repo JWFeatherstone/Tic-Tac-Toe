@@ -12,6 +12,7 @@ class Game {
       this.board[index] = 1;
       this.whosTurn = 2;
       updateOutput();
+      updateAnnouncement(this.whosTurn);
       this.checkForWin();
       this.checkForDraw();
     } 
@@ -20,6 +21,7 @@ class Game {
       this.board[index] = 4;
       this.whosTurn = 1;
       updateOutput();
+      updateAnnouncement(this.whosTurn);
       this.checkForWin();
       this.checkForDraw();
     }
@@ -27,7 +29,6 @@ class Game {
 
   checkForDraw() {
     if (!this.board.includes(0) && this.winner === null) {
-      
       this.winner = 'Draw';
       updateAnnouncement(this.winner);
       setTimeout(this.resetGame, 2000);
@@ -39,6 +40,7 @@ class Game {
     clearBoard();
     updateWinCount();
     updateAnnouncement(this.whosTurn);
+    updateOutput();
   };
 
   checkForWin() {
@@ -57,7 +59,6 @@ class Game {
       });
 
       if (sum == 3) {
-        console.log("P1win")
         this.playerOne.increaseWins();
         this.winner = 'Player One'
         updateAnnouncement(this.winner);
@@ -65,7 +66,6 @@ class Game {
       } 
     
       else if (sum == 12) {
-        console.log("P2win")
         this.playerTwo.increaseWins();
         this.winner = 'Player Two'
         updateAnnouncement(this.winner);
