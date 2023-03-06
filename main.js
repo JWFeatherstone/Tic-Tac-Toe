@@ -11,8 +11,8 @@ var game = new Game(playerOne, playerTwo);
 // Event Listeners
 
 window.addEventListener("load", function() {
-    updateOutput();
-    updateAnnouncement(game.whosTurn);
+  updateOutput();
+  updateAnnouncement(game.whosTurn);
 });
 
 gameBoard.addEventListener("click", function(event) {
@@ -23,10 +23,9 @@ gameBoard.addEventListener("click", function(event) {
   } 
   
   else if (event.target.classList.contains("game-tile") && game.board[index] !== 0 && game.winner === null) {
-    duplicateTurnAlert();
+    alertDuplicateTurn();
   }
 });
-
 
 // Functions
 
@@ -72,11 +71,15 @@ function updateAnnouncement(announcement) {
 function updateWinCount() {
   var playerOneWins = document.querySelector("#playerOneWins");
   var playerTwoWins = document.querySelector("#playerTwoWins");
+  var playerOneWinsMobile = document.querySelector("#playerOneWinsMobile");
+  var playerTwoWinsMobile = document.querySelector("#playerTwoWinsMobile");
   playerOneWins.innerText = `${game.playerOne.wins} WINS`;
+  playerOneWinsMobile.innerText = `${game.playerOne.wins} WINS`;
   playerTwoWins.innerText = `${game.playerTwo.wins} WINS`;
+  playerTwoWinsMobile.innerText = `${game.playerTwo.wins} WINS`;
 };
 
-function duplicateTurnAlert() {
+function alertDuplicateTurn() {
   var alertBox = document.querySelector(".alert-box");
   alertBox.classList.remove("hidden");
   setTimeout(function() {
