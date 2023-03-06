@@ -186,9 +186,10 @@ main {
 }
 
 .alert-box {
-  top: 92%;
+  top: 50%;
   width: 60%;
   height: 6%;
   padding: 1.2rem;
+  z-index: 10;
 }
 }
