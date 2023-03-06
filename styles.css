@@ -16,10 +16,6 @@ body, html {
   display: none;
 }
 
-.no-click {
-  cursor: not-allowed;
-}
-
 .alert-box {
   background-color: white;
   border: 0.2rem solid black;
@@ -120,12 +116,17 @@ h1 {
 }
 
 .game-tile {
+  cursor: pointer;
   align-items: center;
   aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   justify-items: center;
   width: 10rem;
+}
+
+.no-click .game-tile {
+  cursor: default;
 }
 
 /* Media Queries */
