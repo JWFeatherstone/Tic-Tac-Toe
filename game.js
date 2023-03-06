@@ -11,20 +11,17 @@ class Game {
     if (this.whosTurn === 1) {
       this.board[index] = 1;
       this.whosTurn = 2;
-      updateOutput();
-      updateAnnouncement(this.whosTurn);
-      this.checkForWin();
-      this.checkForDraw();
     } 
         
     else {
       this.board[index] = 4;
       this.whosTurn = 1;
-      updateOutput();
-      updateAnnouncement(this.whosTurn);
-      this.checkForWin();
-      this.checkForDraw();
     }
+    
+    updateOutput();
+    updateAnnouncement(this.whosTurn);
+    this.checkForWin();
+    this.checkForDraw();
   };
 
   checkForDraw() {
