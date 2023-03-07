@@ -35,12 +35,12 @@ function updateOutput() {
       gameBoard.innerHTML += `<div class="game-tile no-click" id="tile${i}"><img src="${game.playerOne.token}" alt="Player One Icon" class="game-tile player-icons"></div>`
     } 
         
-  else if (game.board[i] === 4) {
+    else if (game.board[i] === 4) {
     gameBoard.innerHTML += `<div class="game-tile no-click" id="tile${i}"><img src="${game.playerTwo.token}" alt="Player Two Icon" class="game-tile player-icons"></div>`
-  } else {
+    } else {
     gameBoard.innerHTML += `<div class="game-tile" id="tile${i}"></div>`
-  }
-  }
+    }
+  };
 };
 
 function updateAnnouncement(announcement) {
