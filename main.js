@@ -88,4 +88,11 @@ function alertDuplicateTurn() {
 function clearBoard() {
   game.board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   game.winner = null;
+  if (game.started === 1){
+    game.whosTurn = 2;
+    game.started = 2;
+  } else if (game.started === 2){
+    game.whosTurn = 1;
+    game.started = 1;
+  }
 };

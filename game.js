@@ -4,6 +4,7 @@ class Game {
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
     this.whosTurn = 1;
+    this.started = 1;
     this.winner = null;
   }
 
@@ -35,6 +36,7 @@ class Game {
   resetGame() {
     clearBoard();
     updateWinCount();
+    console.log(this.whosTurn)
     updateAnnouncement(this.whosTurn);
     updateOutput();
   };
