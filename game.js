@@ -4,6 +4,7 @@ class Game {
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
     this.whosTurn = 1;
+    this.started = 1;
     this.winner = null;
   }
 
@@ -28,13 +29,14 @@ class Game {
     if (!this.board.includes(0) && this.winner === null) {
       this.winner = 'Draw';
       updateAnnouncement(this.winner);
-      setTimeout(this.resetGame, 2000);
+      setTimeout(this.resetGame.bind(this), 2000);
     }
   };
 
   resetGame() {
     clearBoard();
     updateWinCount();
+    switchTurn();
     updateAnnouncement(this.whosTurn);
     updateOutput();
   };
@@ -53,14 +55,14 @@ class Game {
         this.playerOne.increaseWins();
         this.winner = 'Player One'
         updateAnnouncement(this.winner);
-        setTimeout(this.resetGame, 2000);
+        setTimeout(this.resetGame.bind(this), 2000);
       } 
     
       else if (board[a] === 4 && board[a] === board[b] && board[a] === board[c]) {
         this.playerTwo.increaseWins();
         this.winner = 'Player Two'
         updateAnnouncement(this.winner);
-        setTimeout(this.resetGame, 2000);
+        setTimeout(this.resetGame.bind(this), 2000);
       }
     };
   };
