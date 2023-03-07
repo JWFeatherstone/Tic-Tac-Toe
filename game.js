@@ -33,7 +33,6 @@ class Game {
   };
 
   resetGame() {
-    this.whosTurn = 1;
     clearBoard();
     updateWinCount();
     updateAnnouncement(this.whosTurn);
