@@ -18,7 +18,7 @@ In your forked GitHub repository, click the code drop-down menu and copy the SSH
 1. In the following page, hit the “View Deployment” button to view the site.
 
 ## Preview of App:
-![Demo](https://i.gyazo.com/2349dca8c1c7b61b57545e6f7c0d2c6e.gif)](https://gyazo.com/2349dca8c1c7b61b57545e6f7c0d2c6e)
+[![Demo](https://i.gyazo.com/2349dca8c1c7b61b57545e6f7c0d2c6e.gif)](https://gyazo.com/2349dca8c1c7b61b57545e6f7c0d2c6e)
 
 ## Context:
 - This project was completed as part of the Final Solo Challenge of module one for the [Turing School of Software and Design Front End Web Development program](https://frontend.turing.edu/), a four module, seven month focused on preparing students for a career as web developers working with Javascript, HTML, CSS, and the React framework.
